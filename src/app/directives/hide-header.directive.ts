@@ -25,6 +25,13 @@ export class HideHeaderDirective {
     if ($event.detail.currentY <= 0 || $event.detail.currentY == this.saveY) {
       return;
     }
+
+    const scrollTop: number = $event.detail.scrollTop;
+    let newDirection = Direction.DOWN;
+
+    // Calculate the distance from top based on the previousY
+    // which is set when we change directions
+    let newPosition = -scrollTop + this.previousY;
   }
 
 }
