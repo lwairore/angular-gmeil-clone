@@ -61,4 +61,9 @@ export class MailPage implements OnInit {
     await popover.present();
   }
 
+  removeMail(id: any) {
+    this.emails = this.emails.filter(email => email.id != id);
+    this.changeDetector.detectChanges();
+  }
+
 }
