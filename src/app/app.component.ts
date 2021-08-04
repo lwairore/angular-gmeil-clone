@@ -15,17 +15,19 @@ export class AppComponent implements OnInit, OnDestroy {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  private unlistener: (() => void) | undefined;
+  private onlineEventUnlistener: (() => void) | undefined;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer2: Renderer2) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+  }
 
   ngOnDestroy() {
-    if (this.unlistener) {
-      this.unlistener();
+    if (this.onlineEventUnlistener) {
+      this.onlineEventUnlistener();
     }
   }
 
