@@ -13,4 +13,8 @@ export class AccountPage implements OnInit {
   ngOnInit() {
   }
 
+  close() {
+    this.popoverCtrl.dismiss();
+  }
+
 }
