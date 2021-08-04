@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
 import sampleData from 'src/assets/data.json';
+import { AccountPage } from '../account/account.page';
 
 @Component({
   selector: 'app-mail',
@@ -9,7 +11,7 @@ import sampleData from 'src/assets/data.json';
 export class MailPage implements OnInit {
   emails: any[] = sampleData;
 
-  constructor() { }
+  constructor(private popoverCtrl: PopoverController) { }
 
   ngOnInit() {
     for (let e of this.emails) {
@@ -41,5 +43,14 @@ export class MailPage implements OnInit {
     }, 2000);
   }
 
+  async openAccount(ev: any) {
+    const popover = await this.popoverCtrl.create({
+      component: AccountPage,
+      event: ev,
+      cssClass: 'custom-popover'
+    });
+
+    await popover.present();
+  }
 
 }
