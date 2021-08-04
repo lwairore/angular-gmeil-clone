@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import sampleData from 'src/assets/data.json';
 
 @Component({
   selector: 'app-details',
@@ -12,6 +13,7 @@ export class DetailsPage implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    const emailID = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
 }
