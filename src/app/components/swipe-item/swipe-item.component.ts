@@ -143,7 +143,9 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
     Haptics.impact({ style: ImpactStyle.Light });
   }
 
-  openDetails(id: any) { }
+  openDetails(id: any) {
+    this.router.navigate(['tabs', 'mail', id]);
+  }
 
 }
 
