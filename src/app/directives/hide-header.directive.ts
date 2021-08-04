@@ -40,6 +40,11 @@ export class HideHeaderDirective {
       newDirection = Direction.UP;
       newPosition -= this.scrollDistance;
     }
+
+    // Make our maximum scroll distance the end of the range
+    if (newPosition < -this.scrollDistance) {
+      newPosition = -this.scrollDistance;
+    }
   }
 
 }
