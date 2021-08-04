@@ -14,6 +14,8 @@ export class SwipeItemComponent implements OnInit {
   wrapper: ElementRef | undefined;
   @ViewChild('trash', { read: ElementRef })
   trashIcon: ElementRef | undefined;
+  @ViewChild('archive', { read: ElementRef })
+  archiveIcon: ElementRef | undefined;
 
   constructor() { }
 
