@@ -1,4 +1,4 @@
-import { Directive, Input, Renderer2 } from '@angular/core';
+import { Directive, HostListener, Input, Renderer2 } from '@angular/core';
 import { DomController } from '@ionic/angular';
 
 enum Direction {
@@ -19,6 +19,9 @@ export class HideHeaderDirective {
   constructor(
     private renderer: Renderer2,
     private domCtrl: DomController) { }
+
+  @HostListener('ionScroll', ['$event']) onContentScroll($event: any) {
+  }
 
 }
 
