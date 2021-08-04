@@ -35,5 +35,11 @@ export class MailPage implements OnInit {
     return '#' + '00000'.substring(0, 6 - c.length) + c;
   }
 
+  doRefresh(ev: any) {
+    setTimeout(() => {
+      ev.target.complete();
+    }, 2000);
+  }
+
 
 }
