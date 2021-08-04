@@ -10,6 +10,9 @@ import { SwipeItemComponent } from './swipe-item/swipe-item.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    SwipeItemComponent,
   ]
 })
 export class SharedComponentsModule { }
