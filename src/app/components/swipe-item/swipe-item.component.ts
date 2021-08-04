@@ -129,3 +129,14 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
   openDetails(id: any) { }
 
 }
+
+
+/**
+ * We define an ANIMATION_BREAKPOINT which is the distance after which an item can be released and will be delete. Until that value, the item will only snap back to it’s original place
+ * We need a gesture and handle the move and end of our item
+ * On move, we check the direction and color the background of our wrapper red or green depending on the x direction
+ * On move, we transform the X coordinates according to the current delta to move the item left or right
+ * On move, we animate the trash/archive icon if we crossed the breakpoint and run a function to handle this
+ * On end, we check if we are above our breakpoint and slide the item out to the left/right and run a custom delete animation that we define upfront. This function animates the height, so the item flys out and the row collapses at the same time
+ * On end, when the animation has finished we emit this to the parent component using an EventEmitter
+ */
