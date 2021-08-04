@@ -54,6 +54,9 @@ export class HideHeaderDirective {
       this.renderer.setStyle(this.header, 'top', Math.min(0, newPosition) + 'px');
       this.renderer.setStyle(this.header, 'opacity', newOpacity);
     });
+
+    // Store the current Y value to see in which direction we scroll
+    this.saveY = $event.detail.currentY;
   }
 
 }
