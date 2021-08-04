@@ -1,10 +1,10 @@
-import { Directive, Input } from '@angular/core';
+import { AfterViewInit, Directive, Input } from '@angular/core';
 import { AnimationController } from '@ionic/angular';
 
 @Directive({
   selector: '[appAnimatedFab]'
 })
-export class AnimatedFabDirective {
+export class AnimatedFabDirective implements AfterViewInit {
   @Input('appAnimatedFab') fab: any;
   expanded = true;
 
@@ -12,4 +12,5 @@ export class AnimatedFabDirective {
 
   constructor(private animationCtrl: AnimationController) { }
 
+  ngAfterViewInit() { }
 }
