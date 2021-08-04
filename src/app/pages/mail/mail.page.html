@@ -1,4 +1,4 @@
-<ion-content scrollEvents="true" [appHideHeader]="search">
+<ion-content scrollEvents="true" [appHideHeader]="search" [appAnimatedFab]="fab">
 
   <div class="search-overlay ion-align-items-center" slot="fixed" #search>
     <ion-row>
@@ -47,4 +47,11 @@
       </ion-row>
     </ion-item>
   </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="light" #fab>
+      <ion-icon name="pencil-outline" color="primary"></ion-icon>
+      <span>Compose</span>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
