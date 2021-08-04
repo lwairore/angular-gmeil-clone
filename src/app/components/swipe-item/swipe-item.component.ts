@@ -132,7 +132,7 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
 
     if (newVariable.vibrate) {
       // single vibration. duration of vibration in ms
-      newVariable.vibrate(500);
+      newVariable.vibrate(100);
     }
   }
 
