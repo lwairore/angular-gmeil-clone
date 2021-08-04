@@ -14,6 +14,13 @@ Here is a working live demo: [https://gmeil-clone.web.app](https://gmeil-clone.w
 ![This image displays the homepage for Gmeil Clone app](src/assets/demo/mails.png)
 ![This image displays the how mails are displayed on homepage for Gmeil Clone app](src/assets/demo/mails2.png)
 
+## Sliding Item to Archive and Delete
+### Slide to the left to Archive email
+![This image shows how to Archive an email on Gmeil Clone app](src/assets/demo/slide-to-archive-email.png)
+
+### Slide to the right to Delete email
+![This image shows how to Delete an email on Gmeil Clone app](src/assets/demo/slide-to-delete-email.png)
+
 ## Email details
 ![This image displays the contents of an email for Gmeil Clone app](src/assets/demo/email-details.png)
 
