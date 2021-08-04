@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import sampleData from 'src/assets/data.json';
 import { AccountPage } from '../account/account.page';
@@ -11,13 +12,19 @@ import { AccountPage } from '../account/account.page';
 export class MailPage implements OnInit {
   emails: any[] = sampleData;
 
-  constructor(private popoverCtrl: PopoverController) { }
+  constructor(
+    private popoverCtrl: PopoverController,
+    private router: Router) { }
 
   ngOnInit() {
     for (let e of this.emails) {
       // Create a custom color for every email
       e.color = this.intToRGB(this.hashCode(e.from));
     }
+  }
+
+  openDetails(id: any) {
+    this.router.navigate(['tabs', 'mail', id]);
   }
 
   // https://stackoverflow.com/questions/3426404/create-a-hexadecimal-colour-based-on-a-string-with-javascript
