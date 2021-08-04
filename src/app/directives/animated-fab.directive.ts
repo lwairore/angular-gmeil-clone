@@ -53,4 +53,8 @@ export class AnimatedFabDirective implements AfterViewInit {
     this.shrinkAnimation?.direction('reverse')?.play();
   }
 
+  shrinkFab() {
+    this.shrinkAnimation?.direction('alternate')?.play();
+  }
+
 }
