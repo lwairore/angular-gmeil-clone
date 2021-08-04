@@ -31,6 +31,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.offlineEventUnlistener = this.renderer2.listen('window', 'offline', () => this.displayNetworkStatus());
     this.beforeinstallpromptUnlistener = this.renderer2
       .listen('window', 'beforeinstallprompt', (event) => this.promptEvent = event);
+    this.beforeinstallpromptUnlistener = this.renderer2
+      .listen('window', 'appinstalled', (event) => this.promptEvent = undefined);
   }
 
   ngOnDestroy() {
