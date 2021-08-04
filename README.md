@@ -12,3 +12,6 @@ Here is a working live demo: [https://gmeil-clone.web.app](https://gmeil-clone.w
 
 ## Email details
 ![This image displays the contents of an email for Gmeil Clone app](src/assets/demo/email-details.png)
+
+## Side Menu with Tab Bar
+![This image displays the Side Menu with Tab Bar for Gmeil Clone app](src/assets/demo/sidemenubar-with-toolbar.png)
