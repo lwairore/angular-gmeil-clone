@@ -18,3 +18,7 @@ Here is a working live demo: [https://gmeil-clone.web.app](https://gmeil-clone.w
 
 ## Account Popover
 ![This image displays account popover for Gmeil Clone app](src/assets/demo/account-popover.png)
+
+# Built with
+- [Ionic](https://ionicframework.com/)
+- [Angular](https://angular.io/)
