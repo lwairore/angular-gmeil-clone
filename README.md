@@ -15,3 +15,6 @@ Here is a working live demo: [https://gmeil-clone.web.app](https://gmeil-clone.w
 
 ## Side Menu with Tab Bar
 ![This image displays the Side Menu with Tab Bar for Gmeil Clone app](src/assets/demo/sidemenubar-with-toolbar.png)
+
+## Account Popover
+![This image displays account popover for Gmeil Clone app](src/assets/demo/account-popover.png)
