@@ -7,6 +7,8 @@ export class AnimatedFabDirective {
   @Input('appAnimatedFab') fab: any;
   expanded = true;
 
+  shrinkAnimation: Animation | undefined;
+
   constructor() { }
 
 }
