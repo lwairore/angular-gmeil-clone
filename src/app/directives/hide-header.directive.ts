@@ -1,5 +1,10 @@
 import { Directive, Input } from '@angular/core';
 
+enum Direction {
+  UP = 1,
+  DOWN = 0
+}
+
 @Directive({
   selector: '[appHideHeader]'
 })
