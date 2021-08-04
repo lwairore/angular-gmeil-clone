@@ -31,4 +31,15 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
+  displayNetworkStatus() {
+    if (navigator.onLine) {
+      this.renderer2.setStyle(
+        this.document.body, 'filter', '');
+    } else {
+      this.renderer2.setStyle(
+        this.document.body, 'filter', 'grayscale(1)');
+    }
+  }
+
+
 }
