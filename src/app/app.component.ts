@@ -18,6 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private onlineEventUnlistener: (() => void) | undefined;
   private offlineEventUnlistener: (() => void) | undefined;
   private beforeinstallpromptUnlistener: (() => void) | undefined;
+  promptEvent: any;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
