@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Renderer2 } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -15,5 +15,11 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor( @Inject(DOCUMENT) private document: Document) {}
+
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private renderer2: Renderer2) { }
+
+
+
 }
