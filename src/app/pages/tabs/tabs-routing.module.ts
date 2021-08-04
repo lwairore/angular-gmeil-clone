@@ -16,6 +16,10 @@ const routes: Routes = [
         path: 'mail/:id',
         loadChildren: () => import('../details/details.module').then( m => m.DetailsPageModule)
       },
+      {
+        path: 'meet',
+        loadChildren: () => import('../meet/meet.module').then(m => m.MeetPageModule)
+      },
     ]
   }
 ];
