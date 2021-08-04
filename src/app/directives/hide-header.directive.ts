@@ -21,6 +21,10 @@ export class HideHeaderDirective {
     private domCtrl: DomController) { }
 
   @HostListener('ionScroll', ['$event']) onContentScroll($event: any) {
+    // Skip some events that create ugly glitches
+    if ($event.detail.currentY <= 0 || $event.detail.currentY == this.saveY) {
+      return;
+    }
   }
 
 }
