@@ -21,6 +21,7 @@ export class SwipeItemComponent implements OnInit {
   bigIcon = false;
 
   trashAnimation: any;
+  archiveAnimation: any;
 
   constructor() { }
 
