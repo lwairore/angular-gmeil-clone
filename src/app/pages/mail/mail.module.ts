@@ -8,6 +8,7 @@ import { MailPageRoutingModule } from './mail-routing.module';
 
 import { MailPage } from './mail.page';
 import { AccountPageModule } from '../account/account.module';
+import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { AccountPageModule } from '../account/account.module';
     IonicModule,
     MailPageRoutingModule,
     AccountPageModule,
+    SharedDirectivesModule,
   ],
   declarations: [MailPage]
 })
