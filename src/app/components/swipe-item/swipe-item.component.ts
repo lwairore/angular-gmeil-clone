@@ -18,6 +18,8 @@ export class SwipeItemComponent implements OnInit {
   archiveIcon: ElementRef | undefined;
   @Output() delete: EventEmitter<any> = new EventEmitter();
 
+  bigIcon = false;
+
   constructor() { }
 
   ngOnInit() { }
