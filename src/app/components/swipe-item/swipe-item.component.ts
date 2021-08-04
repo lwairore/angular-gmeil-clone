@@ -31,7 +31,9 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
     private animationCtrl: AnimationController
   ) { }
 
-  ngAfterViewInit() { }
+  ngAfterViewInit() { 
+    this.setupIconAnimations();
+  }
 
   ngOnInit() { }
 
