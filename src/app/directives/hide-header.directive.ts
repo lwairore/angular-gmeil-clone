@@ -1,4 +1,5 @@
 import { Directive, Input, Renderer2 } from '@angular/core';
+import { DomController } from '@ionic/angular';
 
 enum Direction {
   UP = 1,
@@ -15,7 +16,9 @@ export class HideHeaderDirective {
   direction: Direction = Direction.DOWN;
   saveY = 0;
 
-  constructor(private renderer: Renderer2,) { }
+  constructor(
+    private renderer: Renderer2,
+    private domCtrl: DomController) { }
 
 }
 
