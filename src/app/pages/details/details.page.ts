@@ -17,4 +17,13 @@ export class DetailsPage implements OnInit {
     this.mailDetails = sampleData.find(detail => detail.id === emailID);
   }
 
+  // https://stackoverflow.com/questions/3426404/create-a-hexadecimal-colour-based-on-a-string-with-javascript
+  private hashCode(str: string) {
+    var hash = 0;
+    for (var i = 0; i < str.length; i++) {
+      hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return hash;
+  }
+
 }
