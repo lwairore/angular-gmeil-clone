@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonItem } from '@ionic/angular';
 
 @Component({
@@ -24,7 +25,9 @@ export class SwipeItemComponent implements OnInit {
   archiveAnimation: any;
   deleteAnimation: any;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() { }
 
