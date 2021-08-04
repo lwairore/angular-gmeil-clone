@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimationController, GestureController, IonItem } from '@ionic/angular';
 
@@ -7,7 +7,7 @@ import { AnimationController, GestureController, IonItem } from '@ionic/angular'
   templateUrl: './swipe-item.component.html',
   styleUrls: ['./swipe-item.component.scss'],
 })
-export class SwipeItemComponent implements OnInit {
+export class SwipeItemComponent implements OnInit, AfterViewInit {
   @Input('email') m: any;
   @ViewChild(IonItem, { read: ElementRef })
   item: ElementRef | undefined;
@@ -30,6 +30,8 @@ export class SwipeItemComponent implements OnInit {
     private gestureCtrl: GestureController,
     private animationCtrl: AnimationController
   ) { }
+
+  ngAfterViewInit() { }
 
   ngOnInit() { }
 
