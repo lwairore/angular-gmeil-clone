@@ -7,11 +7,15 @@ import sampleData from 'src/assets/data.json';
   styleUrls: ['./mail.page.scss'],
 })
 export class MailPage implements OnInit {
-  emails = sampleData;
+  emails: any[] = sampleData;
 
   constructor() { }
 
   ngOnInit() {
+    for (let e of this.emails) {
+      // Create a custom color for every email
+      e.color = this.intToRGB(this.hashCode(e.from));
+    }
   }
 
   // https://stackoverflow.com/questions/3426404/create-a-hexadecimal-colour-based-on-a-string-with-javascript
