@@ -16,6 +16,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   private onlineEventUnlistener: (() => void) | undefined;
+  private offlineEventUnlistener: (() => void) | undefined;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
