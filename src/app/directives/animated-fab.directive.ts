@@ -14,6 +14,7 @@ export class AnimatedFabDirective implements AfterViewInit {
 
   ngAfterViewInit() {
     this.fab = this.fab.el;
+    this.setupAnimation();
   }
 
   setupAnimation() {
