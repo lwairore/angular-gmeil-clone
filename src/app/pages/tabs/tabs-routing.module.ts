@@ -6,7 +6,13 @@ import { TabsPage } from './tabs.page';
 const routes: Routes = [
   {
     path: '',
-    component: TabsPage
+    component: TabsPage,
+    children: [
+      {
+        path: 'mail',
+        loadChildren: () => import('../mail/mail.module').then(m => m.MailPageModule)
+      },
+    ]
   }
 ];
 
@@ -14,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }
