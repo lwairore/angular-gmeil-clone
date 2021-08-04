@@ -126,9 +126,9 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
   animateTrash(zoomIn: any) {
     this.bigIcon = zoomIn;
     if (zoomIn) {
-      this.trashAnimation.direction('alternate').play();
+      this.trashAnimation?.direction('alternate')?.play();
     } else {
-      this.trashAnimation.direction('reverse').play();
+      this.trashAnimation?.direction('reverse')?.play();
     }
     Haptics.impact({ style: ImpactStyle.Light });
   }
@@ -136,9 +136,9 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
   animateArchive(zoomIn: any) {
     this.bigIcon = zoomIn;
     if (zoomIn) {
-      this.archiveAnimation.direction('alternate').play();
+      this.archiveAnimation?.direction('alternate')?.play();
     } else {
-      this.archiveAnimation.direction('reverse').play();
+      this.archiveAnimation?.direction('reverse')?.play();
     }
     Haptics.impact({ style: ImpactStyle.Light });
   }
