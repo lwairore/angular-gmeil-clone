@@ -2,6 +2,8 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Outp
 import { Router } from '@angular/router';
 import { AnimationController, GestureController, IonItem } from '@ionic/angular';
 
+const ANIMATION_BREAKPOINT = 70;
+
 @Component({
   selector: 'app-swipe-item',
   templateUrl: './swipe-item.component.html',
@@ -31,8 +33,72 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
     private animationCtrl: AnimationController
   ) { }
 
-  ngAfterViewInit() { 
+  ngAfterViewInit() {
     this.setupIconAnimations();
+    if (!(this.item instanceof ElementRef)) { return; }
+    const style = this.item.nativeElement.style;
+    const windowWidth = window.innerWidth;
+
+    this.deleteAnimation = this.animationCtrl.create('delete-animation')
+      .addElement(this.item.nativeElement)
+      .duration(300)
+      .easing('ease-out')
+      .fromTo('height', '89px', '0');
+
+    const moveGesture = this.gestureCtrl.create({
+      el: this.item.nativeElement,
+      gestureName: 'move',
+      threshold: 0,
+      onStart: ev => {
+        style.tansition = '';
+      },
+      onMove: ev => {
+        if (!(this.item instanceof ElementRef) ||
+          !(this.wrapper instanceof ElementRef)) { return; }
+        style.transform = `translate3d(${ev.deltaX}px, 0, 0)`;
+        this.item.nativeElement.classList.add('rounded');
+
+
+
+        if (ev.deltaX > 0) {
+          this.wrapper.nativeElement.style['background-color'] = 'var(--ion-color-primary)';
+        } else if (ev.deltaX < 0) {
+          this.wrapper.nativeElement.style['background-color'] = 'green';
+        }
+
+        if (ev.deltaX > ANIMATION_BREAKPOINT && !this.bigIcon) {
+          this.animateTrash(true);
+        } else if (ev.deltaX > 0 && ev.deltaX < ANIMATION_BREAKPOINT && this.bigIcon) {
+          this.animateTrash(false);
+        }
+
+        if (ev.deltaX < -ANIMATION_BREAKPOINT && !this.bigIcon) {
+          this.animateArchive(true);
+        } else if (ev.deltaX < 0 && ev.deltaX > -ANIMATION_BREAKPOINT && this.bigIcon) {
+          this.animateArchive(false);
+        }
+      },
+      onEnd: ev => {
+        this.item?.nativeElement.classList.remove('rounded');
+        style.transition = '0.2s ease-out';
+        if (ev.deltaX > ANIMATION_BREAKPOINT) {
+          style.transform = `translate3d(${windowWidth}px, 0, 0)`;
+          this.deleteAnimation.play();
+          this.deleteAnimation.onFinish(() => {
+            this.delete.emit(true);
+          });
+        } else if (ev.deltaX < -ANIMATION_BREAKPOINT) {
+          style.transform = `translate3d(-${windowWidth}px, 0, 0)`;
+          this.deleteAnimation.play();
+          this.deleteAnimation.onFinish(() => {
+            this.delete.emit(true);
+          });
+        } else {
+          style.transform = '';
+        }
+      }
+    });
+    moveGesture.enable();
   }
 
   ngOnInit() { }
@@ -54,5 +120,12 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
         .fromTo('transform', 'scale(1)', 'scale(1.5)');
     }
   }
+
+
+  animateTrash(zoomIn: any) { }
+
+  animateArchive(zoomIn: any) { }
+
+  openDetails(id: any) { }
 
 }
