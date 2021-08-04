@@ -48,4 +48,9 @@ export class AnimatedFabDirective implements AfterViewInit {
       this.expandFab();
     }
   }
+
+  expandFab() {
+    this.shrinkAnimation?.direction('reverse')?.play();
+  }
+
 }
