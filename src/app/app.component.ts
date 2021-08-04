@@ -36,6 +36,10 @@ export class AppComponent implements OnInit, OnDestroy {
     if (this.offlineEventUnlistener) {
       this.offlineEventUnlistener();
     }
+
+    if (this.beforeinstallpromptUnlistener) {
+      this.beforeinstallpromptUnlistener();
+    }
   }
 
   displayNetworkStatus() {
