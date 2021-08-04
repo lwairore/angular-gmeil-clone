@@ -5,6 +5,7 @@ import { Directive, Input } from '@angular/core';
 })
 export class HideHeaderDirective {
   @Input('appHideHeader') header: any;
+  readonly scrollDistance = 50;
 
   constructor() { }
 
