@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
-    path: 'mail',
-    loadChildren: () => import('./pages/mail/mail.module').then( m => m.MailPageModule)
-  },
-  {
     path: 'meet',
     loadChildren: () => import('./pages/meet/meet.module').then( m => m.MeetPageModule)
   },
