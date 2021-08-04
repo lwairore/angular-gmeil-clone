@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { IonItem } from '@ionic/angular';
 
 @Component({
@@ -16,6 +16,7 @@ export class SwipeItemComponent implements OnInit {
   trashIcon: ElementRef | undefined;
   @ViewChild('archive', { read: ElementRef })
   archiveIcon: ElementRef | undefined;
+  @Output() delete: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
