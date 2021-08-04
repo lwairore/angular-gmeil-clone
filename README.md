@@ -9,3 +9,6 @@ Here is a working live demo: [https://gmeil-clone.web.app](https://gmeil-clone.w
 ## Homepage
 ![This image displays the homepage for Gmeil Clone app](src/assets/demo/mails.png)
 ![This image displays the how mails are displayed on homepage for Gmeil Clone app](src/assets/demo/mails2.png)
+
+## Email details
+![This image displays the contents of an email for Gmeil Clone app](src/assets/demo/email-details.png)
