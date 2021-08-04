@@ -1,7 +1,11 @@
 # Angular Gmeil Clone
 Angular Gmeil Clone is a simple similar clone of the popular Gmail.
 
-Angular Gmeil Clone implements the combination of a tab bar and side menu, plus the inbox UI known from Gmail.
+Angular Gmeil Clone implements:
+
+1. The combination of a tab bar and side menu, plus the inbox UI known from Gmail.
+2. An animated 'Compose' button.
+3. A special behaviour to slide and delete emails with vibration haptic.
 
 # Demo
 Here is a working live demo: [https://gmeil-clone.web.app](https://gmeil-clone.web.app)
