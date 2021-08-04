@@ -1,4 +1,5 @@
 import { Directive, Input } from '@angular/core';
+import { AnimationController } from '@ionic/angular';
 
 @Directive({
   selector: '[appAnimatedFab]'
@@ -9,6 +10,6 @@ export class AnimatedFabDirective {
 
   shrinkAnimation: Animation | undefined;
 
-  constructor() { }
+  constructor(private animationCtrl: AnimationController) { }
 
 }
