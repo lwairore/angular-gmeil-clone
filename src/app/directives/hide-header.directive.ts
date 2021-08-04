@@ -1,4 +1,4 @@
-import { Directive, Input } from '@angular/core';
+import { Directive, Input, Renderer2 } from '@angular/core';
 
 enum Direction {
   UP = 1,
@@ -15,7 +15,7 @@ export class HideHeaderDirective {
   direction: Direction = Direction.DOWN;
   saveY = 0;
 
-  constructor() { }
+  constructor(private renderer: Renderer2,) { }
 
 }
 
