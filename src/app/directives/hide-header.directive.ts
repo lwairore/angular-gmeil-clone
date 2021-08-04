@@ -48,6 +48,12 @@ export class HideHeaderDirective {
 
     // Calculate opacity between 0 and 1
     let newOpacity = 1 - (newPosition / -this.scrollDistance);
+
+    // Move and set the opacity of our element
+    this.domCtrl.write(() => {
+      this.renderer.setStyle(this.header, 'top', Math.min(0, newPosition) + 'px');
+      this.renderer.setStyle(this.header, 'opacity', newOpacity);
+    });
   }
 
 }
