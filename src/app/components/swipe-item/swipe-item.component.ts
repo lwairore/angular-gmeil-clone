@@ -10,6 +10,8 @@ export class SwipeItemComponent implements OnInit {
   @Input('email') m: any;
   @ViewChild(IonItem, { read: ElementRef })
   item: ElementRef | undefined;
+  @ViewChild('wrapper')
+  wrapper: ElementRef | undefined;
 
   constructor() { }
 
