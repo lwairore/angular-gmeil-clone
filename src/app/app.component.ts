@@ -23,6 +23,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() { }
 
-  ngOnDestroy(){}
+  ngOnDestroy() {
+    if (this.unlistener) {
+      this.unlistener();
+    }
+  }
 
 }
