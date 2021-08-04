@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { GestureController, IonItem } from '@ionic/angular';
+import { AnimationController, GestureController, IonItem } from '@ionic/angular';
 
 @Component({
   selector: 'app-swipe-item',
@@ -27,7 +27,8 @@ export class SwipeItemComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private gestureCtrl: GestureController
+    private gestureCtrl: GestureController,
+    private animationCtrl: AnimationController
   ) { }
 
   ngOnInit() { }
