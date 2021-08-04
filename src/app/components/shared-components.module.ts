@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SwipeItemComponent } from './swipe-item/swipe-item.component';
 import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -12,6 +13,7 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     CommonModule,
     IonicModule,
+    RouterModule,
   ],
   exports: [
     SwipeItemComponent,
