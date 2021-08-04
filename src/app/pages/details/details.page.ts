@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
+  mailDetails: any;
 
   constructor() { }
 
