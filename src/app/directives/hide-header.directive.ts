@@ -57,6 +57,12 @@ export class HideHeaderDirective {
 
     // Store the current Y value to see in which direction we scroll
     this.saveY = $event.detail.currentY;
+
+    // If the direction changed, store the point of change for calculation
+    if (newDirection != this.direction) {
+      this.direction = newDirection;
+      this.previousY = scrollTop;
+    }
   }
 
 }
