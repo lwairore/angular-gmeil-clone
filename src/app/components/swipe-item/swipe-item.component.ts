@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { IonItem } from '@ionic/angular';
 
 @Component({
   selector: 'app-swipe-item',
@@ -7,9 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SwipeItemComponent implements OnInit {
   @Input('email') m: any;
+  @ViewChild(IonItem, { read: ElementRef })
+  item: ElementRef | undefined;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }
