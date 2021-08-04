@@ -12,6 +12,10 @@ const routes: Routes = [
         path: 'mail',
         loadChildren: () => import('../mail/mail.module').then(m => m.MailPageModule)
       },
+      {
+        path: 'mail/:id',
+        loadChildren: () => import('../details/details.module').then( m => m.DetailsPageModule)
+      },
     ]
   }
 ];
