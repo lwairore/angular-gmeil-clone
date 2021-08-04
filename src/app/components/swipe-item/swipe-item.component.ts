@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { Haptics, ImpactStyle } from '@capacitor/haptics';
 import { AnimationController, GestureController, IonItem } from '@ionic/angular';
 
 const ANIMATION_BREAKPOINT = 70;
@@ -122,6 +121,21 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
     }
   }
 
+  causeVibration() {
+    let newVariable: any;
+    newVariable = window?.navigator;
+
+    newVariable.vibrate = navigator.vibrate ||
+      newVariable.webkitVibrate ||
+      newVariable.mozVibrate ||
+      newVariable.msVibrate;
+
+    if (newVariable.vibrate) {
+      // single vibration. duration of vibration in ms
+      newVariable.vibrate(500);
+    }
+  }
+
 
   animateTrash(zoomIn: any) {
     this.bigIcon = zoomIn;
@@ -130,7 +144,7 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
     } else {
       this.trashAnimation?.direction('reverse')?.play();
     }
-    Haptics.impact({ style: ImpactStyle.Light });
+    this.causeVibration();
   }
 
   animateArchive(zoomIn: any) {
@@ -140,7 +154,7 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
     } else {
       this.archiveAnimation?.direction('reverse')?.play();
     }
-    Haptics.impact({ style: ImpactStyle.Light });
+    this.causeVibration();
   }
 
   openDetails(id: any) {
