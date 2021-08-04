@@ -15,6 +15,11 @@ export class DetailsPage implements OnInit {
   ngOnInit() {
     const emailID = this.activatedRoute.snapshot.paramMap.get('id');
     this.mailDetails = sampleData.find(detail => detail.id === emailID);
+    if (this.mailDetails) {
+      this.mailDetails.color = this.intToRGB(
+        this.hashCode(
+          this.mailDetails.from));
+    }
   }
 
   // https://stackoverflow.com/questions/3426404/create-a-hexadecimal-colour-based-on-a-string-with-javascript
