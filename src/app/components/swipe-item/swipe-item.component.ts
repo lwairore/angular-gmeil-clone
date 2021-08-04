@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 import { AnimationController, GestureController, IonItem } from '@ionic/angular';
 
 const ANIMATION_BREAKPOINT = 70;
@@ -122,9 +123,25 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
   }
 
 
-  animateTrash(zoomIn: any) { }
+  animateTrash(zoomIn: any) {
+    this.bigIcon = zoomIn;
+    if (zoomIn) {
+      this.trashAnimation.direction('alternate').play();
+    } else {
+      this.trashAnimation.direction('reverse').play();
+    }
+    Haptics.impact({ style: ImpactStyle.Light });
+  }
 
-  animateArchive(zoomIn: any) { }
+  animateArchive(zoomIn: any) {
+    this.bigIcon = zoomIn;
+    if (zoomIn) {
+      this.archiveAnimation.direction('alternate').play();
+    } else {
+      this.archiveAnimation.direction('reverse').play();
+    }
+    Haptics.impact({ style: ImpactStyle.Light });
+  }
 
   openDetails(id: any) { }
 
