@@ -32,6 +32,14 @@ export class HideHeaderDirective {
     // Calculate the distance from top based on the previousY
     // which is set when we change directions
     let newPosition = -scrollTop + this.previousY;
+
+    // We are scrolling up the page
+    // In this case we need to reduce the position first
+    // to prevent it jumping from -50 to 0
+    if (this.saveY > $event.detail.currentY) {
+      newDirection = Direction.UP;
+      newPosition -= this.scrollDistance;
+    }
   }
 
 }
