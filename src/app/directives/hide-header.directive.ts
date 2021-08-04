@@ -7,6 +7,7 @@ export class HideHeaderDirective {
   @Input('appHideHeader') header: any;
   readonly scrollDistance = 50;
   previousY = 0;
+  direction: Direction = Direction.DOWN;
 
   constructor() { }
 
