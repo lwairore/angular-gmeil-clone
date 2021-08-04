@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, Input } from '@angular/core';
+import { AfterViewInit, Directive, HostListener, Input } from '@angular/core';
 import { AnimationController } from '@ionic/angular';
 
 @Directive({
@@ -35,5 +35,17 @@ export class AnimatedFabDirective implements AfterViewInit {
       .duration(400)
       .easing('ease-out')
       .addAnimation([shrink, fade]);
+  }
+
+  @HostListener('ionScroll', ['$event']) onContentScroll($event: any) {
+    if ($event.detail.deltaY > 0 && this.expanded) {
+      // Scrolling down
+      this.expanded = false;
+      this.shrinkFab();
+    } else if ($event.detail.deltaY < 0 && !this.expanded) {
+      // Scrolling up
+      this.expanded = true;
+      this.expandFab();
+    }
   }
 }
