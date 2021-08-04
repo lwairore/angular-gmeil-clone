@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import sampleData from 'src/assets/data.json';
 
 @Component({
   selector: 'app-mail',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mail.page.scss'],
 })
 export class MailPage implements OnInit {
+  emails = sampleData;
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  private intToRGB(i: any) {
+    var c = (i & 0x00FFFFFF)
+      .toString(16)
+      .toUpperCase();
+
+    return '#' + '00000'.substring(0, 6 - c.length) + c;
+  }
+
 
 }
