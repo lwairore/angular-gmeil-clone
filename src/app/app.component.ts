@@ -15,6 +15,7 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  private unlistener: (() => void) | undefined;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
