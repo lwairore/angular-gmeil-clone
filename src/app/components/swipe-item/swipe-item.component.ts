@@ -22,6 +22,7 @@ export class SwipeItemComponent implements OnInit {
 
   trashAnimation: any;
   archiveAnimation: any;
+  deleteAnimation: any;
 
   constructor() { }
 
