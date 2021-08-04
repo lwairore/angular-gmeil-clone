@@ -13,6 +13,7 @@ export class HideHeaderDirective {
   readonly scrollDistance = 50;
   previousY = 0;
   direction: Direction = Direction.DOWN;
+  saveY = 0;
 
   constructor() { }
 
