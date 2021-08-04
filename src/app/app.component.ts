@@ -22,7 +22,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private renderer2: Renderer2) { }
 
   ngOnInit() {
-
+    this.onlineEventUnlistener = this.renderer2.listen('window', 'online', () => this.displayNetworkStatus());
   }
 
   ngOnDestroy() {
