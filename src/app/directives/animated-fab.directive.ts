@@ -5,6 +5,7 @@ import { Directive, Input } from '@angular/core';
 })
 export class AnimatedFabDirective {
   @Input('appAnimatedFab') fab: any;
+  expanded = true;
 
   constructor() { }
 
