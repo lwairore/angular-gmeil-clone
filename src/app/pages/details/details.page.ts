@@ -26,4 +26,13 @@ export class DetailsPage implements OnInit {
     return hash;
   }
 
+  private intToRGB(i: any) {
+    var c = (i & 0x00FFFFFF)
+      .toString(16)
+      .toUpperCase();
+
+    return '#' + '00000'.substring(0, 6 - c.length) + c;
+  }
+
+
 }
