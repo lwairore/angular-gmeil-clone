@@ -45,6 +45,9 @@ export class HideHeaderDirective {
     if (newPosition < -this.scrollDistance) {
       newPosition = -this.scrollDistance;
     }
+
+    // Calculate opacity between 0 and 1
+    let newOpacity = 1 - (newPosition / -this.scrollDistance);
   }
 
 }
