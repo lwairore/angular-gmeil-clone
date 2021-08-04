@@ -15,6 +15,7 @@ import { AnimatedFabDirective } from './animated-fab.directive';
   ],
   exports: [
     HideHeaderDirective,
+    AnimatedFabDirective,
   ]
 })
 export class SharedDirectivesModule { }
