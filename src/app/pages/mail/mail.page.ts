@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import sampleData from 'src/assets/data.json';
@@ -14,7 +14,8 @@ export class MailPage implements OnInit {
 
   constructor(
     private popoverCtrl: PopoverController,
-    private router: Router) { }
+    private router: Router,
+    private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit() {
     for (let e of this.emails) {
