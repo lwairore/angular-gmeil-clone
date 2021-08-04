@@ -63,5 +63,8 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
+  installPwa(): void {
+    this.promptEvent.prompt();
+  }
 
 }
