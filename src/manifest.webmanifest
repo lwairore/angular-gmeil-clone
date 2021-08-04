@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "short_name": "app",
+  "name": "Gmeil Clone",
+  "short_name": "Gmeil Clone",
   "theme_color": "#f4f5f8",
   "background_color": "#fafafa",
   "display": "standalone",
