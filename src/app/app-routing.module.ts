@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'meet',
     loadChildren: () => import('./pages/meet/meet.module').then( m => m.MeetPageModule)
+  },
+  {
+    path: 'account',
+    loadChildren: () => import('./pages/account/account.module').then( m => m.AccountPageModule)
   }
 ];
 
