@@ -14,6 +14,7 @@ export class DetailsPage implements OnInit {
 
   ngOnInit() {
     const emailID = this.activatedRoute.snapshot.paramMap.get('id');
+    this.mailDetails = sampleData.find(detail => detail.id === emailID);
   }
 
 }
