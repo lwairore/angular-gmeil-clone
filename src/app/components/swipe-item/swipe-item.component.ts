@@ -35,4 +35,22 @@ export class SwipeItemComponent implements OnInit, AfterViewInit {
 
   ngOnInit() { }
 
+  setupIconAnimations() {
+    if (this.trashIcon instanceof ElementRef) {
+      this.trashAnimation = this.animationCtrl.create('trash-animation')
+        .addElement(this.trashIcon.nativeElement)
+        .duration(300)
+        .easing('ease-in')
+        .fromTo('transform', 'scale(1)', 'scale(1.5)');
+    }
+
+    if (this.archiveIcon instanceof ElementRef) {
+      this.archiveAnimation = this.animationCtrl.create('archive-animation')
+        .addElement(this.archiveIcon.nativeElement)
+        .duration(300)
+        .easing('ease-in')
+        .fromTo('transform', 'scale(1)', 'scale(1.5)');
+    }
+  }
+
 }
